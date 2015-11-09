@@ -4,7 +4,446 @@ __version__ = 1
 
 
 class System:
-    # Names and Races to be used in random character generation.
+    # Names, Enemies and Races to be used in random character generation.
+    ENEMIES = {
+        'Joke': {
+            'Race': 'MissingNo',
+            'HP': 100,
+            'HPR': 10,
+            'EP': 100,
+            'EPR': 10,
+            'MP': 100,
+            'MPR': 10,
+            'StartingKi': 10,
+            'Strength': 1000,
+            'Solidity': 1000,
+            'Speed': 1000,
+            'Intelligence': 1000,
+            'Resistance': 1000,
+            'LevelUp': {
+                'HP': 10,
+                'HPR': 1,
+                'EP': 10,
+                'EPR': 1,
+                'MP': 10,
+                'MPR': 1,
+                'StartingKi': 1,
+                'Strength': 1,
+                'Solidity': 1,
+                'Speed': 1,
+                'Intelligence': 1,
+                'Resistance': 1,
+                }
+            },
+        # TODO: Stat Balancing. Adding more Enemies
+        'Boar': {
+            'Race': 'Boar',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Wolf': {
+            'Race': 'Wolf',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Female Boar': {
+            'Race': 'Boar',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Baby Boar': {
+            'Race': 'Boar',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Female Wolf': {
+            'Race': 'Wolf',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Wolf Cub': {
+            'Race': 'Wolf',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Queen Beetle': {
+            'Race': 'Beetle',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Beetle': {
+            'Race': 'Beetle',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Tree Ent': {
+            'Race': 'Ent',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Small Slime': {
+            'Race': 'Slime',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Medium Slime': {
+            'Race': 'Slime',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Big Slime': {
+            'Race': 'Slime',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Giant Slime': {
+            'Race': 'Slime',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        'Queen Slime': {
+            'Race': 'Slime',
+            'HP': 10,
+            'HPR': 0,
+            'EP': 10,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Strength': 1,
+            'Solidity': 1,
+            'Speed': 1,
+            'Intelligence': 1,
+            'Resistance': 1,
+            'LevelUp': {
+                'HP': 5,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 1,
+                'Solidity': 0,
+                'Speed': 3,
+                'Intelligence': 0,
+                'Resistance': 0,
+                }
+            },
+        }
+
     NAMES = [
         'John',
         'Alice',
@@ -33,6 +472,7 @@ class System:
         'Sally',
         'Raymond',
         'Artur',
+        'Jeffrey'
     ]
 
     RACES = [
@@ -52,6 +492,7 @@ class System:
             # In Lobby there is Options, Quest, Shop, Team.
             'Options': self.options,
             'Quest': self.quest,
+            'Selected Quest': self.selected_quest,
             'Shop': self.shop,
             'Team': self.team,
             # In Options there is Change Settings.
@@ -63,10 +504,39 @@ class System:
             'View Characters': self.view_characters,
             'Teams': self.teams,
             'Dismiss Character': self.dismiss_character,
-            'Team Details': self.team_details
+            'Select Team': self.select_team,
+            'Battle': self.battle,
+            'Select Team Function': self.select_team_function,
             }
+
+        self.quests = {
+            # TODO: Make more quests
+            "Main": [
+                # TODO: Add more quest parts
+                [
+                    "Welcome. It's your first day in training. I am going to be teaching you the art of survival."
+                    "Firstly, before I begin your training, I'd like to battle a little bit to see what you already "
+                    "know.",
+                    ["self.create_enemy('Boar', 1)", "self.create_enemy('Boar', 1)"],
+                    ["self.create_enemy('Boar', 2)"],
+                    "Well done.",
+                    {"Reward": ["self.Save.add_gold(100)",
+                                "self.Save.Story['Main'] = [self.Save.Story['Main'], 2]"
+                                "[self.Save.Story['Main'] < 2]"]
+                     }
+                ],
+                [
+
+                ]
+            ],
+
+        }
+
         # Initial loop.
         self.CurrentLoop = "Main"
+
+        self.ActiveQuest = ""
+        self.Nemesis = False
         # The game store. The current (newly created or loaded) game save.
         self.Save = None
         # Attempts to load up the settings file it exists. Otherwise load the default settings.
@@ -260,7 +730,80 @@ class System:
 
     # TODO: quest
     def quest(self):
-        self.CurrentLoop = "Lobby"
+        if self.Save.Current_Team is None or len(self.Save.Current_Team.Characters) is 0:
+            print("You must first create a team")
+            self.CurrentLoop = "Teams"
+            return
+        message = "0. Go Back\n"
+        quests = []
+        for quest in self.Save.Story:
+            if self.Save.Story[quest] > 0:
+                quests.append(quest)
+        for index in range(len(quests)):
+            message += "{}. {}\n".format(index + 1, quests[index])
+        choice = self.int_input(message, "Enter a value between 0 and {}".format(len(quests)), len(quests))
+        if choice is 0:
+            self.CurrentLoop = "Lobby"
+        else:
+            self.ActiveQuest = quests[choice-1]
+            self.CurrentLoop = "Selected Quest"
+
+    def selected_quest(self):
+        print(self.ActiveQuest)
+        message = "0. Go Back\n"
+        for quest in range(self.Save.Story[self.ActiveQuest]):
+            message += "{}. Part {}\n".format(quest + 1, quest + 1)
+        quests = self.Save.Story[self.ActiveQuest]
+        choice = self.int_input(message, "Enter a value between 0 and {}".format(quests), quests)
+        if choice is 0:
+            self.CurrentLoop = "Quest"
+        else:
+            for action in self.quests[self.ActiveQuest][choice-1]:
+                if type(action) is str:
+                    print(action)
+                if type(action) is list:
+                    for enemy in action:
+                        exec("self.Save.Enemies.append({})".format(enemy))
+                    while len(self.Save.Enemies) > 0:
+                        self.battle()
+                if type(action) is dict:
+                    for reward in action["Reward"]:
+                        exec(reward)
+
+    def battle(self):
+        nemesis = self.Nemesis
+        # Contains the data if the enemies have been defeated or not.
+        opponents = {"Enemies": False,
+                     "Nemesis": False}
+        for entity in self.Save.Enemies:
+            if entity.Stats["HP"] <= 0:
+                del entity
+
+        if len(self.Save.Enemies) is 0:
+            opponents["Enemies"] = True
+
+        if (nemesis is True and len(self.Save.Nemesis) is 0) or nemesis is False:
+            opponents["Nemesis"] = True
+
+        if len(self.Save.Current_Team.Characters) is 0 or len(self.Save.Current_Team.Characters) is None:
+            print("You Lose")
+            self.CurrentLoop = "Lobby"
+            return
+
+        if opponents["Enemies"] is True and opponents["Nemesis"] is True:
+            print("You win")
+            self.CurrentLoop = "Lobby"
+            return
+
+        for entity in self.Save.Enemies:
+            entity.take_turn()
+
+        for character in self.Save.Current_Team.Characters:
+            character.take_turn()
+
+        if nemesis is True:
+            for enemy in self.Save.Nemesis:
+                enemy.take_turn()
 
     def team(self):
         choice = self.int_input(
@@ -282,7 +825,6 @@ class System:
     def inventory(self):
         self.CurrentLoop = "Team"
 
-    # TODO: characters
     def characters(self):
         choice = self.int_input(
             "\n"
@@ -351,7 +893,6 @@ class System:
         else:
             self.CurrentLoop = "Characters"
 
-    # TODO: teams
     def teams(self):
         choice = self.int_input(
             "\n"
@@ -362,36 +903,66 @@ class System:
         if choice is 0:
             self.CurrentLoop = "Characters"
         elif choice is 1:
-            self.CurrentLoop = "Team Details"
+            self.CurrentLoop = "Select Team"
         elif choice is 2:
-            pass
+            team = Team(self)
+            team_name = ""
+            while True:
+                team_name = input("Please name the team:\n")
+                team_name_available = True
+                for team in self.Save.Teams:
+                    if team.Name is team_name:
+                        team_name_available = False
+                if team_name_available is True:
+                    break
+            team.Name = team_name
+            self.Save.Teams.append(team)
 
-    # TODO: team_details
-    def team_details(self):
+    def select_team(self):
         teams = len(self.Save.Teams)
         if teams is 0:
             print("\nThere are currently no teams.\n")
             self.CurrentLoop = "Teams"
         else:
-            print("\n0.Go Back")
+            message = "\n0.Go Back\n"
             for i in range(teams):
-                print("{}.{}".format(i+1, self.Save.Teams[i].Name))
-            choice = self.int_input("\n", "Please enter a number between 0 and {}".format(teams + 1), teams)
+                message += "{}.{}\n".format(i+1, self.Save.Teams[i].Name)
+            choice = self.int_input(message, "Please enter a number between 0 and {}".format(teams + 1), teams)
             if choice is 0:
                 self.CurrentLoop = "Teams"
             else:
-                try:
-                    print(self.Save.Teams[choice - 1])
-                except IndexError:
-                    pass
+                self.Save.Selected_Team = self.Save.Teams[choice - 1]
+                self.CurrentLoop = "Select Team Function"
+
+    def select_team_function(self):
+        len_char = len(self.Save.Selected_Team.Characters)
+        choice = self.int_input("\n0. Go back\n"
+                                "1. Select as Adventure Team\n"
+                                "2. Remove Member\n"
+                                "3. Delete Team\n"
+                                "{}".format(["", "4. Add Member\n"][len_char < 6]),
+                                "Please enter a value between 0 an {}".format([3, 4][len_char < 6]),
+                                [3, 4][len_char < 6])
+        if choice is 0:
+            self.CurrentLoop = "Select Team"
+        elif choice is 1:
+            self.Save.Current_Team = self.Save.Selected_Team
+        elif choice is 2:
+            self.Save.Selected_Team.remove_char()
+        elif choice is 3:
+            for i in range(len(self.Save.Teams)):
+                if self.Save.Teams[i] is self.Save.Selected_Team:
+                    del self.Save.Teams[i]
+        else:
+            self.Save.Selected_Team.add_char()
 
 # System Functions
 
     @staticmethod
-    def int_input(arg, error, maxvalue, minvalue=0):
+    def int_input(message, error, maxvalue, minvalue=0):
         while True:
             try:
-                temp = int(input(arg))
+                temp = int(input(message))
                 if minvalue <= temp <= maxvalue:
                     return temp
                 else:
@@ -525,6 +1096,34 @@ class System:
         else:
             self.Save.Nemesis.append(Character(self, name, race))
 
+    def create_enemy(self, name="Joke", lv=0):
+        temp_enemy = Entity(self)
+        temp_enemy.Stats["Race"] = name
+        temp_enemy.Stats["Name"] = name
+        temp_enemy.Stats["Lv"] = lv
+        temp_enemy.Stats["HP"] = self.ENEMIES[name]["HP"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["HP"])
+        temp_enemy.Stats["THP"] = self.ENEMIES[name]["HP"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["HP"])
+        temp_enemy.Stats["HPR"] = self.ENEMIES[name]["HPR"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["HPR"])
+        temp_enemy.Stats["EP"] = self.ENEMIES[name]["EP"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["EP"])
+        temp_enemy.Stats["TEP"] = self.ENEMIES[name]["EP"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["EP"])
+        temp_enemy.Stats["EPR"] = self.ENEMIES[name]["EPR"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["EPR"])
+        temp_enemy.Stats["MP"] = self.ENEMIES[name]["MP"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["MP"])
+        temp_enemy.Stats["TMP"] = self.ENEMIES[name]["MP"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["MP"])
+        temp_enemy.Stats["MPR"] = self.ENEMIES[name]["MPR"] + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["MP"])
+        temp_enemy.Stats["StartingKi"] = self.ENEMIES[name]["StartingKi"] \
+            + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["StartingKi"])
+        temp_enemy.Stats["Strength"] = self.ENEMIES[name]["Strength"] \
+            + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["Strength"])
+        temp_enemy.Stats["Solidity"] = self.ENEMIES[name]["Solidity"] \
+            + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["Solidity"])
+        temp_enemy.Stats["Speed"] = self.ENEMIES[name]["Speed"] \
+            + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["Speed"])
+        temp_enemy.Stats["Intelligence"] = self.ENEMIES[name]["Intelligence"] \
+            + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["Intelligence"])
+        temp_enemy.Stats["Resistance"] = self.ENEMIES[name]["Resistance"] \
+            + ((lv - 1) * self.ENEMIES[name]["LevelUp"]["Resistance"])
+        return temp_enemy
+
 
 class Game:
     def __init__(self, system):
@@ -537,6 +1136,7 @@ class Game:
             'Characters Dead': 0,
             'Creatures Killed': 0,
             'Gold Earned': 0,
+            'Gold Spent': 0,
             'Times Saved': 0,
             'Player': self.system.check_save_availability()
         }
@@ -547,10 +1147,11 @@ class Game:
         self.Nemesis = []
         self.Enemies = []
         self.Story = {
-            'Main': 0,
+            'Main': 1,
+            'Forest Hike': 0
         }
-        self.Current_Team = (None, None)
-
+        self.Current_Team = None
+        self.Selected_Team = None
         self.Stats = {
             'Dead Characters': [],
             'Gold': 0,
@@ -559,23 +1160,57 @@ class Game:
             'Morale Boost': 0.00,
          }
 
-    # TODO: update_system_reference
-    def update_system_reference(self, system):
-        self.system = system
+    def add_gold(self, gold):
+        self.Stats['Gold'] += gold
+        self.Info['Gold Earned'] += gold
+
+    def remove_gold(self, gold):
+        self.Stats['Gold'] -= gold
+        self.Info['Gold Spent'] += gold
 
 
 class Team:
     def __init__(self, system):
-        self.__version__ = __version__
         self.system = system
+        self.__version__ = __version__
         self.Characters = []
         self.Name = ""
 
-    def edit_team(self):
-        pass
+    def remove_char(self):
+        while len(self.Characters) > 0:
+            message = "\n0. Go back\n"
+            for i in range(len(self.Characters)):
+                message += "{}. {}\n".format(i+1, self.Characters[i].list())
+            choice = self.system.int_input(message,
+                                           "Enter a value between 0 and {}".format(len(self.Characters)),
+                                           len(self.Characters))
+            if choice is 0:
+                return
+            else:
+                self.Characters.pop(choice-1)
 
-    def delete_team(self):
-        pass
+    def add_char(self):
+        while len(self.Characters) < 6:
+            message = "\n0. Go back\n"
+            for i in range(len(self.system.Save.Characters)):
+                message += "{}. {}".format(i+1, self.system.Save.Characters[i].list())
+                message = [message + "\n", message + " - Member\n"][self.system.Save.Characters[i] in self.Characters]
+            choice = self.system.int_input(message,
+                                           "Enter a value between 0 and {}".format(len(self.system.Save.Characters)),
+                                           len(self.system.Save.Characters))
+            if choice is 0:
+                return
+            else:
+                if not self.system.Save.Characters[choice-1] in self.Characters:
+                    self.Characters.append(self.system.Save.Characters[choice-1])
+                else:
+                    print("Already a member of the team.")
+
+    def __str__(self):
+        message = "The team {} consists of:\n".format(self.Name)
+        for character in self.Characters:
+            message += character.list()
+        return message
 
     def __del__(self):
         return "Team disbanded"
@@ -583,12 +1218,12 @@ class Team:
 
 class Entity:
     def __init__(self, system):
-        self.__version__ = __version__
         self.system = system
+        self.__version__ = __version__
         self.Stats = {
             'Name': "",
             'Rank': 0,
-            'Title': "None",
+            'Title': "",
             'Race': "",
             'Lv': 1,
             'XP': 0,
@@ -643,13 +1278,43 @@ class Entity:
             'ConcentrationTXP': 10
         }
 
-    # TODO: update_system_reference
-    def update_system_reference(self, system):
-        self.system = system
+    def attack(self):
+        if AI is not None:
+            self.AI.select_opponent()
+            self.AI.select_attack()
+            self.AI.execute_attack()
+        print("{} attacked".format(self.Stats["Name"]))
+
+    def regenerate(self):
+        # print("{} regenerated".format(self.Stats["Name"]))
+        pass
+
+    def focus(self):
+        # print("{} focused".format(self.Stats["Name"]))
+        pass
+
+    def take_turn(self):
+        self.Counters["Regeneration"] += 1
+        if self.Counters["Regeneration"] >= self.system.Settings["Regeneration"]:
+            self.Counters["Regeneration"] -= self.system.Settings["Regeneration"]
+            self.regenerate()
+
+        self.Counters["Ki"] += 1
+        if self.Counters["Ki"] >= self.system.Settings["Ki"]:
+            self.Counters["Ki"] -= self.system.Settings["Ki"]
+            self.focus()
+
+        self.Counters["Speed"] += self.Stats["Speed"]
+        if self.Counters["Speed"] >= self.system.Settings["Speed"]:
+            self.Counters["Speed"] -= self.system.Settings["Speed"]
+            self.attack()
+
+    def list(self):
+        return "Name:{} Race:{} Lv:{}".format(self.Stats["Name"], self.Stats["Race"], self.Stats["Lv"])
 
     def __str__(self):
         knowledge = self.Stats["Lv"] % 10 + self.Stats["Rank"]
-        if self.system.Game.Stats["Knowledge"] >= knowledge:
+        if self.system.Save.Stats["Knowledge"] >= knowledge:
             return (
                 "Name: {}\n"
                 "Race: {}\n"
@@ -687,7 +1352,7 @@ class Entity:
                     self.Stats["Intelligence"]
                 )
             )
-        elif self.system.Game.Stats["Knowledge"]/2 >= knowledge:
+        elif self.system.Save.Stats["Knowledge"]/2 >= knowledge:
             return (
                 "Name: {}\n"
                 "Race: {}\n"
@@ -730,15 +1395,13 @@ class Character(Entity):
         self.Owned = owned
         if self.Owned is True:
             print("\n{} the {} has joined your team.".format(self.Stats["Name"], self.Stats["Race"]))
+        self.AI = UserAI(self.system, self)
 
     def __del__(self):
         if self.Owned is True:
             return "{} has died. I'm sorry. The dead can't return.".format(self.Stats["Name"])
         else:
             return "Your nemesis, {} has died.".format(self.Stats["Name"])
-
-    def list(self):
-        return "Name:{} Race:{} Lv:{}".format(self.Stats["Name"], self.Stats["Race"], self.Stats["Lv"])
 
     def __str__(self):
         return (
@@ -885,6 +1548,32 @@ class Character(Entity):
             else:
                 pass
 
+
+class AI:
+    def __init__(self, system, entity):
+        self.entity = entity
+        self.system = system
+        self.opponent = None
+        self.attack = None
+
+    def select_opponent(self):
+        pass
+
+    def select_attack(self):
+        pass
+
+    def execute_attack(self):
+        pass
+
+
+class UserAI(AI):
+    def __init__(self, system, entity):
+        super().__init__(system, entity)
+
+    def select_opponent(self):
+        message = "Select an opponent to attack"
+        for i in range(len(self.system.Save.Enemies)):
+            message += "{}. {}\n".format(i+1, self.system.Save.Enemies[i].list())
 
 if __name__ == "__main__":
     ''' Create and launch the system object.'''

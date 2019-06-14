@@ -1,0 +1,307 @@
+{
+	"NAMES": [
+		"John",
+		"Alice",
+		"Felix",
+		"Jack",
+		"Tam-lin",
+		"Lauren",
+		"Matthew",
+		"Luke",
+		"Daniel",
+		"Drake",
+		"David",
+		"Nicole",
+		"Mary",
+		"Sam",
+		"Margarita",
+		"Joshua",
+		"Ryu",
+		"Alexander",
+		"Zachariah",
+		"Nathan",
+		"Natas",
+		"Darek",
+		"Reciful",
+		"Johnathan",
+		"Shams",
+		"Sally",
+		"Raymond",
+		"Artur",
+		"Jeffrey"
+	],
+	"RACES":
+	{
+		"Human":{
+            'HP': 40,
+            'HPR': 2,
+            'EP': 40,
+            'EPR': 2,
+            'MP': 15,
+            'MPR': 1.5,
+            'StartingKi': 3,
+            'Ki': 2,
+            'Strength': 12,
+            'Solidity': 7,
+            'Speed': 9,
+            'Intelligence': 8,
+            'Resistance': 4,
+            'LevelUp': {
+                'HP': 7,
+                'HPR': 0.5,
+                'EP': 7,
+                'EPR': 0.5,
+                'MP': 4,
+                'MPR': 0,
+                'StartingKi': 1,
+                'Ki': 0,
+                'Strength': 5,
+                'Solidity': 3,
+                'Speed': 4,
+                'Intelligence': 4,
+                'Resistance': 2,
+            },
+			'Skills': [("Punch", 1)]
+		},
+		"Elf":{
+            'HP': 30,
+            'HPR': 1.5,
+            'EP': 30,
+            'EPR': 1.5,
+            'MP': 30,
+            'MPR': 2,
+            'StartingKi': 4,
+            'Ki': 2,
+            'Strength': 9,
+            'Solidity': 5,
+            'Speed': 12,
+            'Intelligence': 10,
+            'Resistance': 7,
+            'LevelUp': {
+                'HP': 6,
+                'HPR': 0.5,
+                'EP': 6,
+                'EPR': 0.5,
+                'MP': 5,
+                'MPR': 0.5,
+                'StartingKi': 1,
+                'Ki': 0,
+                'Strength': 3,
+                'Solidity': 2,
+                'Speed': 5,
+                'Intelligence': 5,
+                'Resistance': 4,
+            },
+			'Skills': [("Punch", 1)]
+		}
+	},
+	"SKILLS": {
+        'Punch': {
+            'HP': 0,
+            'HPR': 0,
+            'EP': 0,
+            'EPR': 0,
+            'MP': 0,
+            'MPR': 0,
+            'StartingKi': 0,
+            'Ki': 0,
+            'Strength': 5,
+            'Solidity': 0,
+            'Speed': 0,
+            'Intelligence': 0,
+            'Resistance': 0,
+            'LevelUp': {
+                'HP': 0,
+                'HPR': 0,
+                'EP': 0,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Ki': 0,
+                'Strength': 2,
+                'Solidity': 0,
+                'Speed': 0,
+                'Intelligence': 0,
+                'Resistance': 0,
+            },
+		}
+	},
+	"ENEMIES": {
+        'Joke': {
+            'Race': 'MissingNo',
+            'HP': 100,
+            'HPR': 10,
+            'EP': 100,
+            'EPR': 10,
+            'MP': 100,
+            'MPR': 10,
+            'XP': 5,
+            'StartingKi': 10,
+            'Strength': 1000,
+            'Solidity': 1000,
+            'Speed': 1000,
+            'Intelligence': 1000,
+            'Resistance': 1000,
+            'LevelUp': {
+                'HP': 10,
+                'HPR': 1,
+                'EP': 10,
+                'EPR': 1,
+                'MP': 10,
+                'MPR': 1,
+                'StartingKi': 1,
+                'Strength': 1,
+                'Solidity': 1,
+                'Speed': 1,
+                'Intelligence': 1,
+                'Resistance': 1,
+            },
+            'Skills': [("Punch", 100)]
+        },
+        'Wolf': {
+            'Race': 'Wolf',
+            'HP': 18,
+            'HPR': 0,
+            'EP': 18,
+            'EPR': 2,
+            'MP': 0,
+            'MPR': 0,
+            'XP': 5,
+            'StartingKi': 0,
+            'Strength': 7,
+            'Solidity': 4,
+            'Speed': 5,
+            'Intelligence': 5,
+            'Resistance': 2,
+            'LevelUp': {
+                'HP': 8,
+                'HPR': 0,
+                'EP': 8,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 5,
+                'Solidity': 3,
+                'Speed': 5,
+                'Intelligence': 3,
+                'Resistance': 3,
+            },
+            'Skills': [("Punch", 1)]
+        },
+	'Alpha Wolf': {
+            'Race': 'Wolf',
+            'HP': 30,
+            'HPR': 0,
+            'EP': 30,
+            'EPR': 3,
+            'MP': 0,
+            'MPR': 0,
+            'XP': 12,
+            'StartingKi': 4,
+            'Strength': 11,
+            'Solidity': 7,
+            'Speed': 12,
+            'Intelligence': 8,
+            'Resistance': 6,
+            'LevelUp': {
+                'HP': 10,
+                'HPR': 0,
+                'EP': 10,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 6,
+                'Solidity': 4,
+                'Speed': 6,
+                'Intelligence': 3,
+                'Resistance': 4,
+            },
+            'Skills': [("Punch", 1)]
+        },
+		'Giant Sword Wolf': {
+            'Race': 'Wolf',
+            'HP': 45,
+            'HPR': 0,
+            'EP': 45,
+            'EPR': 4,
+            'MP': 0,
+            'MPR': 0,
+            'XP': 24,
+            'StartingKi': 4,
+            'Strength': 20,
+            'Solidity': 14,
+            'Speed': 22,
+            'Intelligence': 15,
+            'Resistance': 18,
+            'LevelUp': {
+                'HP': 15,
+                'HPR': 0,
+                'EP': 15,
+                'EPR': 0,
+                'MP': 0,
+                'MPR': 0,
+                'StartingKi': 0,
+                'Strength': 5,
+                'Solidity': 5,
+                'Speed': 3,
+                'Intelligence': 2,
+                'Resistance': 4,
+            },
+            'Skills': [("Punch", 3)]
+        },
+    },
+	"QUESTS": {
+		"Load": {"Main":1, "Other":0, "Test":1},
+        "Main": [
+            [
+                "Welcome. It's your first day in training. I am going to be teaching you the art of survival.",
+                "Firstly, before I begin your training, I'd like to battle a little bit to see what you already know.",
+                ["self.create_enemy('Wolf', 1)"],
+                ["self.create_enemy('Wolf', 1)", "self.create_enemy('Wolf', 1)", "self.create_enemy('Wolf', 1)"],
+                "Well done.",
+                {
+					"Reward": [
+						"self.Save.add_gold(100)",
+						"self.Save.Story['Main'] = [self.Save.Story['Main'], 2][self.Save.Story['Main'] <= 2]"
+					]
+				}
+            ],
+            [
+				"This is the second part of the 'Main' Quest",
+				["self.create_enemy('Wolf', 1)", "self.create_enemy('Wolf', 1)"],
+				["self.create_enemy('Alpha Wolf', 1)"],
+				{
+					"Reward": [
+						"self.Save.Story['Main'] = [self.Save.Story['Main'], 3][self.Save.Story['Main'] <= 3]"
+					]
+				}
+            ],
+			[
+				"This is the third part of the 'Main' Quest",
+				["self.create_enemy('Alpha Wolf', 2)","self.create_enemy('Wolf', 3)"],
+				["self.create_enemy('Giant Sword Wolf', 1)"],
+				{
+					"Reward": [
+						"self.Save.Story['Other'] = [self.Save.Story['Other'], 1][self.Save.Story['Other'] == 0]"
+					]
+				}
+            ]
+        ],
+		"Other": [
+			[
+				"Hi"
+			]
+		],
+		"Test": [
+			[
+				"This is a test to see if it is easy to add original content to the game.",
+				"This is now a second sentence that will appear after the first one.",
+				["self.create_enemy('Wolf', 1)", "self.create_enemy('Wolf', 1)"],
+				["self.create_enemy('Wolf', 1)" for i in range(5)],
+			]
+		]
+    }
+}
